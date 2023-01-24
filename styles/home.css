@@ -1,10 +1,15 @@
+body {
+    background-color: #ECE9E1;
+}
+
 .resume {
     margin: auto;
+    padding: 2em;
     max-width: 800px;
+    background-color: white;
+    border-radius: 5em;
 }
 
 .header-resume {
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
