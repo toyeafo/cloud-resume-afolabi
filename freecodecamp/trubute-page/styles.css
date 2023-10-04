@@ -1,0 +1,42 @@
+main {
+    background: rgb(238 238 238);
+    padding: 10px;
+    margin: 20px 0 20px 0;
+    border-radius: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  #title {
+    text-align: center;
+  }
+  
+  .title-header {
+    
+  }
+  
+  .title-sub {
+    
+  }
+  
+  #img-div {
+    background: white;
+    margin: 10 10 10 10;
+  }
+  
+  #tribute-info {
+    text-align: center;
+  }
+  
+  #tribute-date {
+    font-weight: bold;
+  }
+  
+  #tribute-list {
+    list-style: inside;
+    /* list-style-type: disc; */
+  }
+  
+  #tribute-quote {
+    font-style: italic;
+    
+  }
