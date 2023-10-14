@@ -19,14 +19,14 @@ For this project, I wanted to make my resume accessible as a dynamic web applica
 Before starting this project, I ensured that I had the following prerequisites:
 
 - An AWS account with the necessary permissions.
-- My custom domain or subdomain (e.g., `yourname.com`).
+- My custom domain or subdomain - https://toyeafolabi-resume.com/.
 - AWS CLI and Boto3 library installed and configured on my local machine.
 - Basic knowledge of HTML, CSS, and JavaScript for customizing my resume.
 
 ## Setup AWS Resources
 
 1. **Amazon S3**:
-   - I created an S3 bucket named `yourname-resume-bucket`.
+   - I created an S3 bucket named `cloud-resume-toye`.
    - Uploaded my resume files (HTML, CSS, JS) to the S3 bucket.
 
 2. **Amazon CloudFront**:
