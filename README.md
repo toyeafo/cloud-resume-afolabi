@@ -39,7 +39,7 @@ Before starting this project, I ensured that I had the following prerequisites:
 
 4. **Amazon DynamoDB**:
    - I created a DynamoDB table to store visitor data.
-   - Defined the table structure, including fields like `VisitorID`, `Timestamp`, `IPAddress`, and `UserAgent`.
+   - Defined the table structure, including fields like `VisitorID`, `Timestamp`, `IPAddress`.
 
 5. **Amazon API Gateway**:
    - I created an API to collect visitor data.
