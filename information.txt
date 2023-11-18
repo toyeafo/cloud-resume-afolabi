@@ -1,0 +1,33 @@
+// Title 
+
+Cloud Engineer based in London who loves solving new problems. Challenge me.
+
+// Website About Section
+
+I'm a skilled cloud engineer with technical support experience helping clients resolve their problems.
+I'm familiar with a range of cloud tools and am able to identify and troubleshoot problems through to resolution. 
+I love challenging technical projects and frequently seek out new problems to solve.
+
+I am a skilled cloud engineer with technical support experience, aiding clients in resolving issues. 
+Proficient in various cloud tools, I can efficiently identify and troubleshoot challenges through to resolution. 
+I thrive on engaging in demanding technical projects and frequently seek out new puzzles to solve.
+
+// Programming Languages
+
+Python
+Java
+HTML
+CSS
+JavaScript
+Bash
+SQL
+
+
+// Tools
+
+Terraform
+Amazon Web Services
+Spring Boot
+Active Directory
+
+
