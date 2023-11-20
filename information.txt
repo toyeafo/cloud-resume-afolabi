@@ -15,13 +15,11 @@ I thrive on engaging in demanding technical projects and frequently seek out new
 // Programming Languages
 
 Python
+Kotlin
 Java
-HTML
-CSS
-JavaScript
-Bash
 SQL
-
+Bash
+JavaScript
 
 // Tools
 
@@ -31,3 +29,38 @@ Spring Boot
 Active Directory
 
 
+// Framework
+Spring Boot
+React
+
+// Infrastructure as Code
+Terraform
+AWS CloudFormation
+
+
+// CI / CD
+Github Actions
+
+// Container & Container Orchestration
+Docker
+Kubernetes
+Elastic Container Service
+
+
+// Ticketing System
+Zendesk
+
+// Experience
+
+Technical Support Specialist @ Funraisin
+May 2023 - Present
+
+IT Support Specialist @ Vigipro Security
+Sep 2022 - Apr 2023
+
+// Certifications
+
+AWS Solutions Architect Associate
+AWS Certified Cloud Practitioner
+Google IT Support Certificate
+Google Cybersecurity Certificate

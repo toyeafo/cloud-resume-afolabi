@@ -41,13 +41,14 @@ Before starting this project, I ensured that I had the following prerequisites:
    - I created a DynamoDB table to store visitor data.
    - Defined the table structure, including fields like `VisitorID`, `Timestamp`, `IPAddress`.
 
-5. **Amazon API Gateway**:
+<!-- 5. **Amazon API Gateway**:
    - I created an API to collect visitor data.
-   - Defined endpoints and integrated them with AWS Lambda functions.
+   - Defined endpoints and integrated them with AWS Lambda functions. -->
 
-6. **AWS Lambda**:
+5. **AWS Lambda**:
    - I created Lambda functions to process API requests.
    - Used the Python Boto3 library to interact with DynamoDB for data storage.
+   - Set up Function URLs as a replacement for API Gateway.
 
 ## Deploying the Resume
 
