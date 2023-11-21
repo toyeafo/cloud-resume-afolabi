@@ -1,1 +1,10 @@
+# Ignore folder that contains python and terraform files
 /code-files
+
+# Ignore python files
+/.pytest_cache
+/.__pycache__
+/__pycache__
+
+# Ignore VSCode cloud resume workspace settings
+cloud-resume-afolabi.code-workspace
