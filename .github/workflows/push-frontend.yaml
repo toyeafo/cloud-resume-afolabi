@@ -1,0 +1,23 @@
+run-name: ${{ github.actor }} is updating frontend in s3
+
+on: [push]
+
+jobs: 
+deploy:
+name: Upload files to S3
+runs-on: ubuntu-latest
+permissions:
+id-token: write
+contents: read
+steps:
+- name: Checkout
+uses: actions/checkout@v3
+- name: Configure AWS Credentials
+uses: aws-actions/configure-aws-credentials@v4
+with:
+role-to-assume: arn:aws:iam::580962175423:role/toye-githubactions-role
+aws-region: eu-west-2
+- name: Copy files to S3 bucket
+run: | 
+aws s3 sync . s3://cloud-resume-toye
+
