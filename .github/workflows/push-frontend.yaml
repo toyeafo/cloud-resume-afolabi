@@ -2,26 +2,25 @@ run-name: ${{ github.actor }} is updating frontend in s3
 
 on: [push]
 env: 
-BUCKET_NAME : "cloud-resume-toye"
-AWS_REGION : "eu-west-2"
+  BUCKET_NAME : "cloud-resume-toye"
+  AWS_REGION : "eu-west-2"
 
 jobs: 
-deploy:
-name: Upload files to S3
-runs-on: ubuntu-latest
-permissions:
-id-token: write
-contents: read
-steps:
-- name: Git clone repo
-uses: actions/checkout@v4
-- name: Configure AWS Credentials
-uses: aws-actions/configure-aws-credentials@v4
-with:
-role-to-assume: arn:aws:iam::580962175423:role/toye-githubactions-role
-role-session-name: testrolesession
-aws-region: ${{env.AWS_REGION}}
-- name: Copy files to S3 bucket
-run: | 
-aws s3 cp ./ s3://${{env.BUCKET_NAME}}/
+  deploy:
+      runs-on: ubuntu-latest
+      permissions:
+        id-token: write
+        contents: read
+      steps:
+        - name: Git clone repo
+          uses: actions/checkout@v4
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v4
+          with:
+            role-to-assume: arn:aws:iam::580962175423:role/toye-githubactions-role
+            role-session-name: testrolesession
+            aws-region: ${{env.AWS_REGION}}
+        - name: "Copy files to S3 bucket"
+          run: | 
+              aws s3 cp ./ s3://${{env.BUCKET_NAME}}/
 
