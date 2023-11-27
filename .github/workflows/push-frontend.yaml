@@ -22,5 +22,5 @@ jobs:
             aws-region: ${{env.AWS_REGION}}
         - name: "Copy files to S3 bucket"
           run: | 
-              aws s3 cp ./* s3://${{env.BUCKET_NAME}}/ --recursive --exclude ".git*"
+              aws s3 sync . s3://${{env.BUCKET_NAME}}/ --exclude ".git*"
 
