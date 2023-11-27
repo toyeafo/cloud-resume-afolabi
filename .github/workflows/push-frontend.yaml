@@ -22,5 +22,5 @@ jobs:
             aws-region: ${{env.AWS_REGION}}
         - name: "Copy files to S3 bucket"
           run: | 
-              aws s3 cp . s3://${{env.BUCKET_NAME}}/
+              aws s3 cp ./cloud-resume-afolabi/ s3://${{env.BUCKET_NAME}}/ --recursive --exclude ".git*"
 
