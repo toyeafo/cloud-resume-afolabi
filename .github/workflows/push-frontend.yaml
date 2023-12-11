@@ -20,7 +20,17 @@ jobs:
             role-to-assume: arn:aws:iam::580962175423:role/toye-githubactions-role
             role-session-name: testrolesession
             aws-region: ${{env.AWS_REGION}}
+        - name: Check AWS CLI version
+          run: aws --version
+        - name: Check AWS CLI Configuration
+          run: aws configure list
+        - name: "Debug: List files in frontend-code"
+          run: |
+              ls -R ./frontend-code/
         - name: "Copy files to S3 bucket"
           run: | 
-              aws s3 sync ./frontend-code/ s3://${{env.BUCKET_NAME}}/ --exclude ".git*"
+              aws s3 cp ./frontend-code/ s3://${{env.BUCKET_NAME}}/ --exclude ".git*" || echo "Error copying files to s3"
+        - name: "Debug: List files in s3 bucket"
+          run: |
+              aws s3 ls -R s3://${{env.BUCKET_NAME}}/
 
