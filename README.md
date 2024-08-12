@@ -1,67 +1,101 @@
-# MY CLOUD RESUME
+# Cloud Resume Project
 
-Welcome to my project on deploying my resume as a dynamic web application using AWS services. In this project, I utilized various AWS services, including Amazon S3, Amazon CloudFront, Amazon Route 53, Amazon DynamoDB, Amazon API Gateway, AWS Lambda, and the Python Boto3 library, to host my resume online and collect visitor data.
+## Overview
 
-## Table of Contents
+This project is a cloud-hosted resume application that leverages modern cloud technologies to provide a highly available and scalable personal website. The application includes both frontend and backend components, with the backend being powered by AWS Lambda and managed through Terraform, and the frontend hosted as a static website. The project also incorporates CI/CD pipelines using GitHub Actions to automate testing and deployment.
 
-- [Project Overview](#project-overview)
-- [Prerequisites](#prerequisites)
-- [Setup AWS Resources](#setup-aws-resources)
-- [Deploying the Resume](#deploying-the-resume)
-- [Monitoring and Analytics](#monitoring-and-analytics)
+## Features
 
-## Project Overview
+- **Cloud-Hosted**: The resume is hosted on the cloud, ensuring high availability and scalability.
+- **Serverless Backend**: Utilizes AWS Lambda for backend functionality, making the application cost-efficient and easily maintainable.
+- **Infrastructure as Code**: Managed using Terraform, allowing for consistent and repeatable deployments.
+- **Continuous Integration/Continuous Deployment (CI/CD)**: Automated pipelines using GitHub Actions for testing and deploying the application.
+- **Responsive Frontend**: A modern, responsive design for the resume, ensuring it looks great on all devices.
 
-For this project, I wanted to make my resume accessible as a dynamic web application. AWS services provided an excellent and scalable infrastructure to achieve this goal.
+## Requirements
 
-## Prerequisites
+- AWS account (for deploying the backend and hosting the frontend)
+- Terraform (for infrastructure management)
+- Python 3.x (for Lambda function and testing)
+- GitHub account (for CI/CD integration)
 
-Before starting this project, I ensured that I had the following prerequisites:
+## Installation
 
-- An AWS account with the necessary permissions.
-- My custom domain or subdomain - https://toyeafolabi-resume.com/.
-- AWS CLI and Boto3 library installed and configured on my local machine.
-- Basic knowledge of HTML, CSS, and JavaScript for customizing my resume.
+### Backend Setup
 
-## Setup AWS Resources
+1. **Clone the Repository**:
 
-1. **Amazon S3**:
-   - I created an S3 bucket named `cloud-resume-toye`.
-   - Uploaded my resume files (HTML, CSS, JS) to the S3 bucket.
+    ```bash
+    git clone https://github.com/yourusername/cloud-resume.git
+    cd cloud-resume/backend-code
+    ```
 
-2. **Amazon CloudFront**:
-   - I created a CloudFront distribution to accelerate content delivery.
-   - Connected it to my S3 bucket as the origin.
+2. **Configure AWS Credentials**:
+   
+   Ensure your AWS CLI is configured with the necessary credentials to deploy resources.
 
-3. **Amazon Route 53**:
-   - I created a Route 53 hosted zone.
-   - Configured my domain/subdomain and pointed it to my CloudFront distribution.
+    ```bash
+    aws configure
+    ```
 
-4. **Amazon DynamoDB**:
-   - I created a DynamoDB table to store visitor data.
-   - Defined the table structure, including fields like `VisitorID`, `Timestamp`, `IPAddress`.
+3. **Deploy Infrastructure**:
+   
+   Use Terraform to provision the necessary AWS resources, including the Lambda function and any supporting services.
 
-<!-- 5. **Amazon API Gateway**:
-   - I created an API to collect visitor data.
-   - Defined endpoints and integrated them with AWS Lambda functions. -->
+    ```bash
+    terraform init
+    terraform apply
+    ```
 
-5. **AWS Lambda**:
-   - I created Lambda functions to process API requests.
-   - Used the Python Boto3 library to interact with DynamoDB for data storage.
-   - Set up Function URLs as a replacement for API Gateway.
+4. **Deploy Lambda Function**:
+   
+   Deploy the Lambda function defined in `lambda_function.py`.
 
-## Deploying the Resume
+    ```bash
+    zip function.zip lambda_function.py
+    aws lambda update-function-code --function-name <YourLambdaFunctionName> --zip-file fileb://function.zip
+    ```
 
-1. I customized my resume's HTML, CSS, and JavaScript to suit my preferences and content.
+### Frontend Setup
 
-2. I deployed my resume to the S3 bucket and ensured that it was publicly accessible.
+1. **Navigate to the Frontend Directory**:
 
-3. I tested my resume by accessing it through the CloudFront distribution or my custom domain.
+    ```bash
+    cd ../frontend-code
+    ```
 
-## Monitoring and Analytics
+2. **Deploy Frontend**:
 
-To ensure that my project is performing as expected, I set up monitoring and analytics, including:
+   The frontend can be hosted on services like AWS S3 (as a static website), or using GitHub Pages.
 
-- CloudWatch alarms for performance monitoring.
-- Amazon SNS for notifications.
-- AWS CloudTrail for auditing and security.
+   For AWS S3:
+
+    ```bash
+    aws s3 cp . s3://your-s3-bucket-name --recursive
+    ```
+
+3. **Update DNS Settings** (Optional):
+
+   If using a custom domain, update your DNS settings to point to the S3 bucket or other hosting service.
+
+### CI/CD Pipeline
+
+The project includes a GitHub Actions workflow (`.github/workflows/push-frontend.yaml`) that automates the deployment process upon pushing changes to the repository.
+
+## Project Structure
+
+- **`.github/workflows/push-frontend.yaml`**: GitHub Actions workflow for CI/CD.
+- **`backend-code/`**: Contains backend-related code, including AWS Lambda function and Terraform configurations.
+  - **`lambda_function.py`**: Python script for the AWS Lambda function.
+  - **`main.tf`**: Terraform configuration for deploying AWS resources.
+  - **`test_lambda_handler.py`**: Test file for the Lambda function.
+- **`frontend-code/`**: Contains frontend-related files.
+  - **`index.html`**: Main HTML file for the resume.
+  - **`js/index.js`**: JavaScript file for frontend logic.
+  - **`styles/`**: CSS files for styling the frontend.
+- **`.gitignore`**: Specifies files and directories to be ignored by Git.
+- **`README.md`**: Documentation file for the project (this file).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
